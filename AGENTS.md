@@ -1,5 +1,50 @@
 # Instructions for Coding Assistants
 
+## ⚠️ Project Context — Read This First
+
+This repo is a **fork** of [alibaba/page-agent](https://github.com/alibaba/page-agent). The owner is a **non-developer** — write clear commit messages, explain technical decisions in plain language, and avoid jargon in user-facing output.
+
+### Repository & Branch Setup
+
+| Item | Value |
+|------|-------|
+| **Our repo** | `testingrepositary/multi-page-agent` |
+| **Forked from** | `alibaba/page-agent` |
+| **Main working branch** | `main` — all our feature work goes here |
+| **Alibaba snapshot branch** | `alibaba-original` — untouched copy of alibaba's code |
+
+### Git Remotes
+
+| Remote | URL | Purpose |
+|--------|-----|---------|
+| `origin` | `https://github.com/testingrepositary/multi-page-agent.git` | Our fork (push here) |
+| `upstream` | `https://github.com/alibaba/page-agent.git` | Alibaba's original (pull updates from here) |
+
+### Syncing with Alibaba's Updates
+
+To pull in new changes from the original alibaba repo:
+
+```bash
+git fetch upstream
+git merge upstream/main
+```
+
+This merges their latest into our `main` branch. Resolve any conflicts if they arise.
+
+### New Machine Setup
+
+When working on a fresh clone, the `upstream` remote won't exist (remotes are local per machine). Check and add it if missing:
+
+```bash
+git remote get-url upstream || git remote add upstream https://github.com/alibaba/page-agent.git
+```
+
+### Our Goal
+
+We are extending page-agent to support **multi-page** workflows. All new features and changes go on the `main` branch.
+
+---
+
 ## Project Overview
 
 This is a **monorepo** with npm workspaces:

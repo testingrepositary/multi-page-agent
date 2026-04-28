@@ -1,4 +1,49 @@
-# Page Agent
+# Multi Page Agent
+
+> **This is our fork of [alibaba/page-agent](https://github.com/alibaba/page-agent).** We're extending it to support multi-page workflows.
+
+---
+
+## 🗂️ How This Repo Is Set Up
+
+### Branches (what you see on GitHub)
+
+| Branch | What it is |
+|--------|-----------|
+| **`main`** | Our branch. All our new features and changes go here. |
+| **`alibaba-original`** | A clean, untouched copy of alibaba's code. Just for reference. |
+
+### Remotes (hidden connections — you won't see these on GitHub)
+
+Remotes are like saved bookmarks on your computer that point to GitHub repos. They let git know where to push and pull code.
+
+| Remote | Points to | What it's for |
+|--------|-----------|---------------|
+| **`origin`** | Our fork (`testingrepositary/multi-page-agent`) | Where we push our work |
+| **`upstream`** | Alibaba's repo (`alibaba/page-agent`) | Where we pull their updates from |
+
+### Setting up on a new machine
+
+When you clone this repo on a different computer, `origin` is set up automatically but `upstream` is not (remotes are local to each machine). Run this once after cloning:
+
+```bash
+git remote add upstream https://github.com/alibaba/page-agent.git
+```
+
+### How to get alibaba's latest updates
+
+Their updates don't come in automatically. When you want them, ask an agent to run:
+
+```bash
+git fetch upstream        # Download their latest code (doesn't change your files)
+git merge upstream/main   # Merge their changes into your branch
+```
+
+If both sides edited the same lines, there'll be a **conflict** — the agent will help you sort it out.
+
+---
+
+## Original README below
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.alicdn.com/imgextra/i4/O1CN01qKig1P1FnhpFKNdi6_!!6000000000532-2-tps-1280-256.png">
